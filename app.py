@@ -48,7 +48,11 @@ def calcScalp():
     breather_pips = request.form['breatherPips']
     target_pips = request.form['targetPips']
 
-    results = calculate_scalp(float(pip_value), float(max_risk), float(breather_pips), float(target_pips))  # noqa E501
+    try:
+        results = calculate_scalp(float(pip_value), float(max_risk), float(breather_pips), float(target_pips))  # noqa E501
+    except Exception as e:
+        print(e)
+        results = {}
 
     return render_template('scalping.html', results=results)
 
@@ -67,7 +71,11 @@ def calcSwings():
     sl_pips = request.form['SLPips']
     tp_pips = request.form['TPPips']
 
-    results = calculate_swing(float(pip_value), float(max_risk), float(sl_pips), float(tp_pips))  # noqa E501
+    try:
+        results = calculate_swing(float(pip_value), float(max_risk), float(sl_pips), float(tp_pips))  # noqa E501
+    except Exception as e:
+        print(e)
+        results = {}
 
     return render_template('swings.html', results=results)
 
