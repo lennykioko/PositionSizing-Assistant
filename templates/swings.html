@@ -30,19 +30,19 @@
         <form action="{{ url_for('calcSwings') }}" method="post">
             <div class="form-group">
                 <label for="pipValue">Pip Value</label>
-                <input type="number" class="form-control" id="pipValue" name="pipValue" value=10>
+                <input type="number" min=0 step="0.01" class="form-control" id="pipValue" name="pipValue" value=10>
             </div>
             <div class="form-group">
                 <label for="maxRisk">Maximum Risk in dollars</label>
-                <input type="number" class="form-control" id="maxRisk" name="maxRisk" placeholder="Maximum Risk in dollars">
+                <input type="number" min=0 step="0.01" class="form-control" id="maxRisk" name="maxRisk" placeholder="Maximum Risk in dollars">
             </div>
             <div class="form-group">
                 <label for="SLPips">Stop Loss Pips</label>
-                <input type="number" class="form-control" id="SLPips" name="SLPips">
+                <input type="number" min=0 step="0.01" class="form-control" id="SLPips" name="SLPips">
             </div>
             <div class="form-group">
                 <label for="TPPips">Take Profit Pips</label>
-                <input type="number" class="form-control" id="TPPips" name="TPPips">
+                <input type="number" min=0 step="0.01" class="form-control" id="TPPips" name="TPPips">
             </div>
             <button type="submit" class="btn btn-primary btn-lg">Calculate Now</button>
         </form>
