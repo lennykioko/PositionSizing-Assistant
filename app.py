@@ -40,7 +40,7 @@ def scalping():
     return render_template('scalping.html')
 
 
-@app.route('/calcScalp', methods=['POST'])
+@app.route('/calcScalp', methods=['POST', 'GET'])
 def calcScalp():
     """calculates the scalping values"""
     pip_value = request.form['pipValue']
@@ -63,7 +63,7 @@ def swings():
     return render_template('swings.html')
 
 
-@app.route('/calcSwings', methods=['POST'])
+@app.route('/calcSwings', methods=['POST', 'GET'])
 def calcSwings():
     """calculates the swings values"""
     pip_value = request.form['pipValue']
