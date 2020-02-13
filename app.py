@@ -35,6 +35,7 @@ def calculate_swing(pip_value, max_risk, sl_pips, tp_pips):
 
 
 @app.route('/')
+@app.route('/scalping')
 def scalping():
     """displays the scalping page"""
     return render_template('scalping.html')
